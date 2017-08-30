@@ -60,7 +60,7 @@ public class RNAdMobInterstitialAdModule extends ReactContextBaseJavaModule {
             }
             event.putString("error", errorString);
             sendEvent("interstitialDidFailToLoad", event);
-            requestAdCallback.invoke(errorString);
+            // requestAdCallback.invoke(errorString);
           }
           @Override
           public void onAdLeftApplication() {
@@ -99,7 +99,7 @@ public class RNAdMobInterstitialAdModule extends ReactContextBaseJavaModule {
       @Override
       public void run () {
         if (mInterstitialAd.isLoaded() || mInterstitialAd.isLoading()) {
-          callback.invoke("Ad is already loaded."); // TODO: make proper error
+          // callback.invoke("Ad is already loaded."); // TODO: make proper error
         } else {
           requestAdCallback = callback;
           AdRequest.Builder adRequestBuilder = new AdRequest.Builder();
@@ -126,7 +126,7 @@ public class RNAdMobInterstitialAdModule extends ReactContextBaseJavaModule {
           showAdCallback = callback;
           mInterstitialAd.show();
         } else {
-          callback.invoke("Ad is not ready."); // TODO: make proper error
+          // callback.invoke("Ad is not ready."); // TODO: make proper error
         }
       }
     });
